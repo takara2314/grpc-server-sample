@@ -1,0 +1,17 @@
+syntax = "proto3";
+option go_package = "/pb";
+
+package dice;
+
+service DiceService {
+	rpc RollDice (RollDiceRequest) returns (RollDiceResponse);
+}
+
+message RollDiceRequest {
+	int32 min_num = 1;
+    int32 max_num = 2;
+}
+
+message RollDiceResponse {
+	int32 result = 1;
+}
